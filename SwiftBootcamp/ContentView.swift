@@ -6,56 +6,114 @@
 //
 
 import SwiftUI
-import SwiftData
 
-struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
 
-    var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+struct ContentView: View{
+    var body: some View{
+        ZStack{
+            LinearGradient(gradient: Gradient(colors: [.blue,  .blue, .white]),
+                           startPoint: .topLeading,
+                           endPoint: .bottom)
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            
+            VStack{
+                Text("Goiânia, GO")
+                    .font(
+                        .system(
+                            size: 32,
+                            weight: .medium,
+                            design: .default
+                        )
+                    )
+                    .foregroundColor(.white)
+                    .padding(20)
+                VStack(spacing: 8) {
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 150)
+                    Text("32º")
+                        .font(.system(size:62, weight: .medium ))
+                }
+                HStack{
+                    Spacer().frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                }
+                HStack(){
+                    VStack{
+                        Text("SEG").font(
+                            .system(
+                                size: 22, weight: .bold))
+                        Image(systemName: "cloud.sun.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                        Text("32º")
+                            .font(.system(size:32, weight: .bold ))
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    VStack{
+                        Text("TER").font(
+                            .system(
+                                size: 22, weight: .bold))
+                        Image(systemName: "cloud.sun.bolt.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                        Text("23º")
+                            .font(.system(size:32, weight: .bold ))
                     }
+                    VStack{
+                        Text("QUA").font(
+                            .system(
+                                size: 22, weight: .bold))
+                        Image(systemName: "cloud.sun.rain.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                        Text("22º")
+                            .font(.system(size:32, weight: .bold ))
+                    }
+                    VStack{
+                        Text("QUI").font(
+                            .system(
+                                size: 22, weight: .bold))
+                        Image(systemName: "cloud.sun.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                        Text("31º")
+                            .font(.system(size:32, weight: .bold ))
+                    }
+                    VStack{
+                        Text("SEX").font(
+                            .system(
+                                size: 22, weight: .bold))
+                        Image(systemName: "cloud.sun.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                        Text("28º")
+                            .font(.system(size:32, weight: .bold ))
+                    }
+               
+                
                 }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+                Spacer()
+            
             }
         }
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+
+struct Content_Previews: PreviewProvider{
+    static var previews: some View{
+        ContentView()
+    
+    }
 }
