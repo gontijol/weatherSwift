@@ -34,7 +34,7 @@ struct ContentView: View{
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200, height: 150)
                     Text("32º")
-                        .font(.system(size:62, weight: .medium ))
+                        .font(.system(size:62, weight: .medium )).foregroundColor(.white)
                 }
                 HStack{
                     Spacer().frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
@@ -43,62 +43,72 @@ struct ContentView: View{
                     VStack{
                         Text("SEG").font(
                             .system(
-                                size: 22, weight: .bold))
+                                size: 22, weight: .bold)).foregroundColor(.white)
+                            .padding(5)
                         Image(systemName: "cloud.sun.fill")
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                         Text("32º")
-                            .font(.system(size:32, weight: .bold ))
+                            .font(.system(size:32, weight: .bold )).foregroundColor(.white)
+                            .padding(5)
                     }
                     VStack{
                         Text("TER").font(
                             .system(
-                                size: 22, weight: .bold))
+                                size: 22, weight: .bold)).foregroundColor(.white)
+                            .padding(5)
                         Image(systemName: "cloud.sun.bolt.fill")
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                         Text("23º")
-                            .font(.system(size:32, weight: .bold ))
+                            .font(.system(size:32, weight: .bold )).foregroundColor(.white)
+                            .padding(5)
                     }
                     VStack{
                         Text("QUA").font(
                             .system(
-                                size: 22, weight: .bold))
+                                size: 22, weight: .bold)).foregroundColor(.white)
+                            .padding(5)
                         Image(systemName: "cloud.sun.rain.fill")
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                         Text("22º")
-                            .font(.system(size:32, weight: .bold ))
+                            .font(.system(size:32, weight: .bold )).foregroundColor(.white)
+                            .padding(5)
                     }
                     VStack{
                         Text("QUI").font(
                             .system(
-                                size: 22, weight: .bold))
+                                size: 22, weight: .bold)).foregroundColor(.white)
+                            .padding(5)
                         Image(systemName: "cloud.sun.fill")
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                         Text("31º")
-                            .font(.system(size:32, weight: .bold ))
+                            .font(.system(size:32, weight: .bold )).foregroundColor(.white)
+                            .padding(5)
                     }
                     VStack{
                         Text("SEX").font(
                             .system(
-                                size: 22, weight: .bold))
+                                size: 22, weight: .bold)).foregroundColor(.white)
+                            .padding(5)
                         Image(systemName: "cloud.sun.fill")
                             .renderingMode(.original)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                         Text("28º")
-                            .font(.system(size:32, weight: .bold ))
+                            .font(.system(size:32, weight: .bold )).foregroundColor(.white)
+                            .padding(5)
                     }
                
                 
